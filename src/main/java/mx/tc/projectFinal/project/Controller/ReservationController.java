@@ -3,10 +3,7 @@ package mx.tc.projectFinal.project.Controller;
 import mx.tc.projectFinal.project.Models.ModelsReservation;
 import mx.tc.projectFinal.project.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -20,4 +17,11 @@ public class ReservationController {
     public Optional<ModelsReservation> getByIDRes(@PathVariable("id_reservation")Integer id_reservation){
         return this.reservationService.getByIDReservation(id_reservation);
     }
+
+    @PostMapping(path="/crearReserva")
+    public ModelsReservation nuevaReser(@RequestBody ModelsReservation modelsReservation){
+        return this.reservationService.newReservation(modelsReservation);
+    }
+
+
 }

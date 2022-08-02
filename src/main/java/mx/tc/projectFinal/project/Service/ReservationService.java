@@ -14,4 +14,7 @@ public class ReservationService {
     public Optional<ModelsReservation> getByIDReservation(Integer id_reservation){
         return reservationRepository.findById(id_reservation);
     }
+    public ModelsReservation newReservation(ModelsReservation modelsReservation){
+        return reservationRepository.save(modelsReservation);
+    }
 }
