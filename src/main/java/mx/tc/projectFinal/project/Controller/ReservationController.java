@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path="/reservacion")
+@CrossOrigin("*")
 public class ReservationController {
     @Autowired
     ReservationService reservationService;
@@ -22,6 +23,4 @@ public class ReservationController {
     public ModelsReservation nuevaReser(@RequestBody ModelsReservation modelsReservation){
         return this.reservationService.newReservation(modelsReservation);
     }
-
-
 }
